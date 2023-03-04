@@ -1,0 +1,23 @@
+This is a stock market alert project which will notify you about any change in stock price in a day for the stocks present in stocks.txt file via whatsapp
+
+Setup your twilio account
+Add your whatsapp number to twilio sandbox
+In sandbox settings confifure your endpoint URL [POST]: http://'your IPaddress'/whatsapp
+Copy your twilio account SID and auth token and paste it in whatsapp.py and whatsapp_receive.py
+In whatsapp.py change your twilio_whatsapp_no. and your_whatsapp_no.
+
+install flask: pip install flask
+install twilio: pip install twilio
+install yahoo finance: pip install yahoo-fin
+
+run whatsapp_receive.py 
+send whatsapp message to your twilio whatsapp no. as mentioned bellow
+add stock_name_as_in_yahoo_finance : adds stocks to stocks.txt for tracking
+remove stock_name_as_in_yahoo_finance : removes stocks from stocks.txt
+stocks : displays all tour stocks in stocks.txt
+
+run stock_price.py to get the alert
+
+Note:
+Every message sent to received on whatsapp is paid as twilio charges $0.005 per message.
+So change the time.sleep() in stock_price accordingly, currently set to 1 hour.

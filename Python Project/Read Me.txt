@@ -1,4 +1,4 @@
-This is a stock market alert project which will notify you about any change in stock price in a day for the stocks present in stocks.txt file via whatsapp
+This is the stock market alert project which will notify you about any change in stock price in a day for the stocks present in stocks.txt file via whatsapp
 
 Setup your twilio account
 Add your whatsapp number to twilio sandbox

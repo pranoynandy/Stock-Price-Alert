@@ -7,12 +7,13 @@ from database import *
 
 app = Flask(__name__)
 
-account_sid = 'Your account_sid'
-auth_token = 'Your auth_token'
+account_sid = 'your account_sid'
+auth_token = 'your auth_token'
 client = Client(account_sid, auth_token)
 
 @app.route("/")
 def hello():
+    print("Hello!")
     return "hello!"
 
 @app.route("/whatsapp", methods=['GET','POST'])

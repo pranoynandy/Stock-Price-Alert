@@ -1,5 +1,5 @@
 from whatsapp import alert
-from yahoo_fin.stock_info import *
+import yfinance as yf
 from datetime import datetime
 import time
 
@@ -8,12 +8,13 @@ ind_stocks = []
 result = {}
 
 def info(stock):
-    price = get_live_price(stock)
-    change = round(get_quote_data(stock)["regularMarketChangePercent"],2)
-    res = abs(change)
+    current_price = yf.Ticker(stock).info["currentPrice"]
+    previous_close_price = yf.Ticker(stock).info["regularMarketPreviousClose"]
+    percentage_change = round(((current_price - previous_close_price) / previous_close_price * 100),2)
+    res = abs(percentage_change)
 
     if res>=3:
-        result[stock] = change
+        result[stock] = percentage_change
     
     return 1
 
@@ -49,4 +50,5 @@ if __name__ == "__main__":
             print(result)
             alert(result)
 
-        time.sleep(3600)
+        #time.sleep(3600)
+        exit()
